@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RASFF × מכס ישראל — infant formula</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; color: #222; font-size: 14px; }
+
+  header { background: #1a3a5c; color: #fff; padding: 18px 28px; display: flex; align-items: center; gap: 16px; }
+  header h1 { font-size: 1.3rem; font-weight: 700; }
+  header .query { background: rgba(255,255,255,.15); border-radius: 6px; padding: 4px 12px; font-size: 0.95rem; }
+  header .meta { margin-right: auto; font-size: 0.8rem; opacity: .7; text-align: left; direction: ltr; }
+
+  .container { max-width: 1300px; margin: 0 auto; padding: 20px 16px; }
+
+  .stats { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
+  .stat-card { background: #fff; border-radius: 10px; padding: 14px 20px; flex: 1; min-width: 160px;
+               box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  .stat-card .num { font-size: 1.8rem; font-weight: 700; color: #1a3a5c; }
+  .stat-card .lbl { font-size: 0.78rem; color: #666; margin-top: 2px; }
+
+  .summary-pills { background: #fff; border-radius: 10px; padding: 14px 20px; margin-bottom: 20px;
+                    box-shadow: 0 1px 4px rgba(0,0,0,.08); display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .sum-pill { border: 1.5px solid; border-radius: 20px; padding: 4px 14px; font-size: 0.82rem; }
+
+  .table-wrap { background: #fff; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,.08); overflow: hidden; }
+  table { width: 100%; border-collapse: collapse; }
+  th { background: #1a3a5c; color: #fff; padding: 10px 12px; text-align: right; font-weight: 600;
+        font-size: 0.82rem; white-space: nowrap; }
+  td { padding: 10px 12px; border-bottom: 1px solid #eee; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(0,0,0,.02) !important; }
+
+  .ref a { color: #1a3a5c; font-weight: 600; text-decoration: none; font-size: 0.82rem; }
+  .ref a:hover { text-decoration: underline; }
+  .subject { max-width: 280px; line-height: 1.4; }
+  .nums { text-align: left; direction: ltr; white-space: nowrap; }
+  .ports { color: #555; }
+  .hs-cell { max-width: 180px; }
+
+  .badge { display: inline-block; color: #fff; border-radius: 12px; padding: 2px 10px;
+             font-size: 0.75rem; font-weight: 600; white-space: nowrap; }
+  code.hs { background: #eef; color: #336; border-radius: 4px; padding: 1px 5px;
+              font-size: 0.72rem; display: inline-block; margin: 1px; }
+  .country { white-space: nowrap; }
+
+  .footer { text-align: center; color: #999; font-size: 0.75rem; margin: 24px 0 8px; }
+  .no-data { text-align: center; padding: 40px; color: #888; }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <div style="font-size:.75rem;opacity:.6;margin-bottom:4px">RASFF × מכס ישראל</div>
+    <h1>🔍 חיפוש: <span class="query">infant formula</span></h1>
+  </div>
+  <div class="meta">עודכן: 16/06/2026 21:16<br>מקורות: RASFF + data.gov.il</div>
+</header>
+
+<div class="container">
+
+  <div class="stats">
+    <div class="stat-card">
+      <div class="num">45</div>
+      <div class="lbl">התראות RASFF על "infant formula"</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">45</div>
+      <div class="lbl">נשלפו לניתוח</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">53</div>
+      <div class="lbl">הצלבות עם יבוא ישראל</div>
+    </div>
+    <div class="stat-card">
+      <div class="num" style="color:#c0392b">12</div>
+      <div class="lbl">חומרה: serious</div>
+    </div>
+  </div>
+
+  <div class="summary-pills">
+    <span style="font-size:.82rem;color:#555;margin-left:4px">חלוקה לפי חומרה:</span>
+    <span class="sum-pill" style="border-color:#c0392b;color:#c0392b"><strong>12</strong> serious</span><span class="sum-pill" style="border-color:#e67e22;color:#e67e22"><strong>31</strong> potentially serious</span><span class="sum-pill" style="border-color:#888;color:#888"><strong>3</strong> potential risk</span><span class="sum-pill" style="border-color:#27ae60;color:#27ae60"><strong>3</strong> not serious</span><span class="sum-pill" style="border-color:#888;color:#888"><strong>2</strong> undecided</span><span class="sum-pill" style="border-color:#95a5a6;color:#95a5a6"><strong>2</strong> no risk</span>
+  </div>
+
+  <div class="table-wrap">
+    <table><thead><tr><th>מזהה RASFF</th><th>תיאור</th><th>חומרה</th><th>מדינת מקור</th><th>יבוא לישראל</th><th>נמלים</th><th>קודי HS</th></tr></thead><tbody>
+    <tr style="background:#fdecea">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/841471"
+          target="_blank">2026.3862</a><br><small>01-05-2026</small></td>
+      <td class="subject">Cereulide in infant formula manufactured in Poland</td>
+      <td><span class="badge" style="background:#c0392b">serious</span></td>
+      <td class="country"><strong>Poland</strong></td>
+      <td class="nums">33.8M ק"ג<br><small>153.9M מעורב</small></td>
+      <td class="ports"><small>Center, Ashdod, Ben Gurion Airport</small></td>
+      <td class="hs-cell"><small><code class="hs">04015000</code> <code class="hs">04021020</code> <code class="hs">04022190</code> <code class="hs">04039090</code> <code class="hs">04041090</code> <code class="hs">04051039</code></small></td>
+    </tr>
+    <tr style="background:#fdecea">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/655448"
+          target="_blank">2024.0108</a><br><small>05-01-2024</small></td>
+      <td class="subject">Possible presence of Cronobacter sakazakii in several batches of Nutramigen LGG infant formula</td>
+      <td><span class="badge" style="background:#c0392b">serious</span></td>
+      <td class="country"><strong>United States</strong></td>
+      <td class="nums">9.6M ק"ג<br><small>123.5M מעורב</small></td>
+      <td class="ports"><small>Ashdod, Ben Gurion Airport, Rabin Crossing</small></td>
+      <td class="hs-cell"><small><code class="hs">04021020</code> <code class="hs">04021090</code> <code class="hs">04022120</code> <code class="hs">04029900</code> <code class="hs">04041090</code> <code class="hs">04051039</code></small></td>
+    </tr>
+    <tr style="background:#fdecea">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/532978"
+          target="_blank">2022.1018</a><br><small>22-02-2022</small></td>
+      <td class="subject">foodborne outbreak suspected to be caused by infant formulae from the United States</td>
+      <td><span class="badge" style="background:#c0392b">serious</span></td>
+      <td class="country"><strong>United States</strong></td>
+      <td class="nums">9.6M ק"ג<br><small>123.5M מעורב</small></td>
+      <td class="ports"><small>Ashdod, Ben Gurion Airport, Rabin Crossing</small></td>
+      <td class="hs-cell"><small><code class="hs">04021020</code> <code class="hs">04021090</code> <code class="hs">04022120</code> <code class="hs">04029900</code> <code class="hs">04041090</code> <code class="hs">04051039</code></small></td>
+    </tr>
+    <tr style="background:#fdecea">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/651535"
+          target="_blank">2023.8615</a><br><small>14-12-2023</small></td>
+      <td class="subject">Cronobacter sakazakii in infant formula from Germany</td>
+      <td><span class="badge" style="background:#c0392b">serious</span></td>
+      <td class="country"><strong>Germany</strong></td>
+      <td class="nums">8.8M ק"ג<br><small>32.6M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Center, Haifa</small></td>
+      <td class="hs-cell"><small><code class="hs">21011100</code> <code class="hs">21011200</code> <code class="hs">21012000</code> <code class="hs">21013000</code> <code class="hs">21021000</code> <code class="hs">21022000</code></small></td>
+    </tr>
+    <tr style="background:#fdecea">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/804056"
+          target="_blank">2025.9006</a><br><small>17-11-2025</small></td>
+      <td class="subject">Presence of foreign matter (broken glass) in infant formula</td>
+      <td><span class="badge" style="background:#c0392b">serious</span></td>
+      <td class="country"><strong>Spain</strong></td>
+      <td class="nums">8.1M ק"ג<br><small>108.8M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Haifa, Allenby</small></td>
+      <td class="hs-cell"><small><code class="hs">04015000</code> <code class="hs">04021090</code> <code class="hs">04029900</code> <code class="hs">04051039</code> <code class="hs">04061019</code> <code class="hs">04061099</code></small></td>
+    </tr>
+    <tr style="background:#fdecea">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/357062"
+          target="_blank">2017.2095</a><br><small>04-12-2017</small></td>
+      <td class="subject">food - food poisoning - alert notification - infant formula  - france</td>
+      <td><span class="badge" style="background:#c0392b">serious</span></td>
+      <td class="country"><strong>France</strong></td>
+      <td class="nums">6.6M ק"ג<br><small>110.9M מעורב</small></td>
+      <td class="ports"><small>Ashdod, Ben Gurion Airport, Rabin Crossing</small></td>
+      <td class="hs-cell"><small><code class="hs">04012000</code> <code class="hs">04015000</code> <code class="hs">04029900</code> <code class="hs">04032090</code> <code class="hs">04039090</code> <code class="hs">04051039</code></small></td>
+    </tr>
+    <tr style="background:#fdecea">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/805293"
+          target="_blank">2025.9368</a><br><small>25-11-2025</small></td>
+      <td class="subject">Cronobacter spp. in infant formulae</td>
+      <td><span class="badge" style="background:#c0392b">serious</span></td>
+      <td class="country"><strong>Netherlands</strong></td>
+      <td class="nums">5.3M ק"ג<br><small>113.7M מעורב</small></td>
+      <td class="ports"><small>Center, Ashdod, Ben Gurion Airport</small></td>
+      <td class="hs-cell"><small><code class="hs">04021020</code> <code class="hs">04022190</code> <code class="hs">04029900</code> <code class="hs">04039090</code> <code class="hs">04041090</code> <code class="hs">04051099</code></small></td>
+    </tr>
+    <tr style="background:#fdecea">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/579492"
+          target="_blank">2022.6588</a><br><small>10-11-2022</small></td>
+      <td class="subject">Cronobacter in infant formula from Czech Republic</td>
+      <td><span class="badge" style="background:#c0392b">serious</span></td>
+      <td class="country"><strong>Czechia</strong></td>
+      <td class="nums">1.1M ק"ג<br><small>23.4M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Haifa, Ashdod</small></td>
+      <td class="hs-cell"><small><code class="hs">04069099</code> <code class="hs">19019090</code> <code class="hs">19041000</code> <code class="hs">19042000</code> <code class="hs">19051000</code> <code class="hs">19053100</code></small></td>
+    </tr>
+    <tr style="background:#fdecea">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/841474"
+          target="_blank">2026.3863</a><br><small>01-05-2026</small></td>
+      <td class="subject">Cereulide in infant formula from Ireland </td>
+      <td><span class="badge" style="background:#c0392b">serious</span></td>
+      <td class="country"><strong>Ireland</strong></td>
+      <td class="nums">1.1M ק"ג<br><small>40.8M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Haifa, Ashdod</small></td>
+      <td class="hs-cell"><small><code class="hs">04051039</code> <code class="hs">04069099</code> <code class="hs">19011000</code> <code class="hs">19041000</code> <code class="hs">19053100</code> <code class="hs">19053200</code></small></td>
+    </tr>
+    <tr style="background:#fdecea">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/841471"
+          target="_blank">2026.3862</a><br><small>01-05-2026</small></td>
+      <td class="subject">Cereulide in infant formula manufactured in Poland</td>
+      <td><span class="badge" style="background:#c0392b">serious</span></td>
+      <td class="country"><strong>Ireland</strong></td>
+      <td class="nums">1.1M ק"ג<br><small>40.8M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Haifa, Ashdod</small></td>
+      <td class="hs-cell"><small><code class="hs">04051039</code> <code class="hs">04069099</code> <code class="hs">19011000</code> <code class="hs">19041000</code> <code class="hs">19053100</code> <code class="hs">19053200</code></small></td>
+    </tr>
+    <tr style="background:#fdecea">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/836052"
+          target="_blank">2026.2954</a><br><small>07-04-2026</small></td>
+      <td class="subject">Detection of Cronobacter in a batch of Infant Formula </td>
+      <td><span class="badge" style="background:#c0392b">serious</span></td>
+      <td class="country"><strong>Ireland</strong></td>
+      <td class="nums">1.1M ק"ג<br><small>40.8M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Haifa, Ashdod</small></td>
+      <td class="hs-cell"><small><code class="hs">04051039</code> <code class="hs">04069099</code> <code class="hs">19011000</code> <code class="hs">19041000</code> <code class="hs">19053100</code> <code class="hs">19053200</code></small></td>
+    </tr>
+    <tr style="background:#fdecea">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/534917"
+          target="_blank">2022.1290</a><br><small>04-03-2022</small></td>
+      <td class="subject">Too high levels of Vitamin A and D in infant formula </td>
+      <td><span class="badge" style="background:#c0392b">serious</span></td>
+      <td class="country"><strong>Sweden</strong></td>
+      <td class="nums">86K ק"ג<br><small>1.2M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Haifa, Ashdod</small></td>
+      <td class="hs-cell"><small><code class="hs">19019090</code> <code class="hs">19041000</code> <code class="hs">19051000</code> <code class="hs">19052090</code> <code class="hs">19053100</code> <code class="hs">19053200</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/822925"
+          target="_blank">2026.1152</a><br><small>11-02-2026</small></td>
+      <td class="subject">Cereulide in infant formula and follow-on formula from Poland</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Poland</strong></td>
+      <td class="nums">33.8M ק"ג<br><small>153.9M מעורב</small></td>
+      <td class="ports"><small>Center, Ashdod, Ben Gurion Airport</small></td>
+      <td class="hs-cell"><small><code class="hs">04015000</code> <code class="hs">04021020</code> <code class="hs">04022190</code> <code class="hs">04039090</code> <code class="hs">04041090</code> <code class="hs">04051039</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/829422"
+          target="_blank">2026.2000</a><br><small>10-03-2026</small></td>
+      <td class="subject">Foreign object in infant formula</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Germany</strong></td>
+      <td class="nums">14.0M ק"ג<br><small>110.1M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Center, Haifa</small></td>
+      <td class="hs-cell"><small><code class="hs">04015000</code> <code class="hs">04021020</code> <code class="hs">04021090</code> <code class="hs">04022120</code> <code class="hs">04022190</code> <code class="hs">04032040</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/818900"
+          target="_blank">2026.0663</a><br><small>27-01-2026</small></td>
+      <td class="subject">Cereulide in infant formula from Germany, with raw material from Ireland</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Germany</strong></td>
+      <td class="nums">14.0M ק"ג<br><small>110.1M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Center, Haifa</small></td>
+      <td class="hs-cell"><small><code class="hs">04015000</code> <code class="hs">04021020</code> <code class="hs">04021090</code> <code class="hs">04022120</code> <code class="hs">04022190</code> <code class="hs">04032040</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/814523"
+          target="_blank">2026.0027</a><br><small>05-01-2026</small></td>
+      <td class="subject">Cereulide in infant formula from Germany</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Germany</strong></td>
+      <td class="nums">14.0M ק"ג<br><small>110.1M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Center, Haifa</small></td>
+      <td class="hs-cell"><small><code class="hs">04015000</code> <code class="hs">04021020</code> <code class="hs">04021090</code> <code class="hs">04022120</code> <code class="hs">04022190</code> <code class="hs">04032040</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/815378"
+          target="_blank">2026.0173</a><br><small>09-01-2026</small></td>
+      <td class="subject">Cereulide in infant formula from Spain/Cereulida en preparados para lactantes producidos en España</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Spain</strong></td>
+      <td class="nums">10.7M ק"ג<br><small>134.8M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Haifa, Allenby</small></td>
+      <td class="hs-cell"><small><code class="hs">04015000</code> <code class="hs">04021090</code> <code class="hs">04029900</code> <code class="hs">04051039</code> <code class="hs">04061019</code> <code class="hs">04061099</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/834272"
+          target="_blank">2026.2802</a><br><small>01-04-2026</small></td>
+      <td class="subject">Detection of cereulide in infant formula from the Netherlands</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Netherlands</strong></td>
+      <td class="nums">9.0M ק"ג<br><small>157.4M מעורב</small></td>
+      <td class="ports"><small>Center, Ashdod, Ben Gurion Airport</small></td>
+      <td class="hs-cell"><small><code class="hs">04021020</code> <code class="hs">04022190</code> <code class="hs">04029900</code> <code class="hs">04039090</code> <code class="hs">04041090</code> <code class="hs">04051099</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/826013"
+          target="_blank">2026.1560</a><br><small>25-02-2026</small></td>
+      <td class="subject">Cereulide in goat milk infant formula from the Netherlands</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Netherlands</strong></td>
+      <td class="nums">9.0M ק"ג<br><small>157.4M מעורב</small></td>
+      <td class="ports"><small>Center, Ashdod, Ben Gurion Airport</small></td>
+      <td class="hs-cell"><small><code class="hs">04021020</code> <code class="hs">04022190</code> <code class="hs">04029900</code> <code class="hs">04039090</code> <code class="hs">04041090</code> <code class="hs">04051099</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/818328"
+          target="_blank">2026.0542</a><br><small>22-01-2026</small></td>
+      <td class="subject">Cereulide toxin in infant formula from Netherland</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Netherlands</strong></td>
+      <td class="nums">9.0M ק"ג<br><small>157.4M מעורב</small></td>
+      <td class="ports"><small>Center, Ashdod, Ben Gurion Airport</small></td>
+      <td class="hs-cell"><small><code class="hs">04021020</code> <code class="hs">04022190</code> <code class="hs">04029900</code> <code class="hs">04039090</code> <code class="hs">04041090</code> <code class="hs">04051099</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/815076"
+          target="_blank">2026.0179</a><br><small>09-01-2026</small></td>
+      <td class="subject">recall of infant formulae produced in Switzerland, possibly contaminated with cereulide</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Netherlands</strong></td>
+      <td class="nums">9.0M ק"ג<br><small>157.4M מעורב</small></td>
+      <td class="ports"><small>Center, Ashdod, Ben Gurion Airport</small></td>
+      <td class="hs-cell"><small><code class="hs">04021020</code> <code class="hs">04022190</code> <code class="hs">04029900</code> <code class="hs">04039090</code> <code class="hs">04041090</code> <code class="hs">04051099</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/810066"
+          target="_blank">2025.9962</a><br><small>12-12-2025</small></td>
+      <td class="subject">Cereulide in infant formula from the Netherlands</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Netherlands</strong></td>
+      <td class="nums">9.0M ק"ג<br><small>157.4M מעורב</small></td>
+      <td class="ports"><small>Center, Ashdod, Ben Gurion Airport</small></td>
+      <td class="hs-cell"><small><code class="hs">04021020</code> <code class="hs">04022190</code> <code class="hs">04029900</code> <code class="hs">04039090</code> <code class="hs">04041090</code> <code class="hs">04051099</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/816985"
+          target="_blank">2026.0347</a><br><small>16-01-2026</small></td>
+      <td class="subject">recall of infant formulae produced in Switzerland, possibly contaminated with cereulide</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>China</strong></td>
+      <td class="nums">7.5M ק"ג<br><small>54.3M מעורב</small></td>
+      <td class="ports"><small>Center, Ashdod, Ben Gurion Airport</small></td>
+      <td class="hs-cell"><small><code class="hs">04021090</code> <code class="hs">04109000</code> <code class="hs">19012000</code> <code class="hs">19019029</code> <code class="hs">19019090</code> <code class="hs">19021100</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/810066"
+          target="_blank">2025.9962</a><br><small>12-12-2025</small></td>
+      <td class="subject">Cereulide in infant formula from the Netherlands</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>China</strong></td>
+      <td class="nums">7.5M ק"ג<br><small>54.3M מעורב</small></td>
+      <td class="ports"><small>Center, Ashdod, Ben Gurion Airport</small></td>
+      <td class="hs-cell"><small><code class="hs">04021090</code> <code class="hs">04109000</code> <code class="hs">19012000</code> <code class="hs">19019029</code> <code class="hs">19019090</code> <code class="hs">19021100</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/819191"
+          target="_blank">2026.0647</a><br><small>27-01-2026</small></td>
+      <td class="subject"> cereulide in infant formula from France</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>France</strong></td>
+      <td class="nums">6.6M ק"ג<br><small>110.9M מעורב</small></td>
+      <td class="ports"><small>Ashdod, Ben Gurion Airport, Rabin Crossing</small></td>
+      <td class="hs-cell"><small><code class="hs">04012000</code> <code class="hs">04015000</code> <code class="hs">04029900</code> <code class="hs">04032090</code> <code class="hs">04039090</code> <code class="hs">04051039</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/818215"
+          target="_blank">2026.0509</a><br><small>22-01-2026</small></td>
+      <td class="subject">cereulid in infant formula from France</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>France</strong></td>
+      <td class="nums">6.6M ק"ג<br><small>110.9M מעורב</small></td>
+      <td class="ports"><small>Ashdod, Ben Gurion Airport, Rabin Crossing</small></td>
+      <td class="hs-cell"><small><code class="hs">04012000</code> <code class="hs">04015000</code> <code class="hs">04029900</code> <code class="hs">04032090</code> <code class="hs">04039090</code> <code class="hs">04051039</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/815902"
+          target="_blank">2026.0196</a><br><small>12-01-2026</small></td>
+      <td class="subject">recall of infant formulae produced in FRANCE, possibly contaminated with cereulide”.</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>France</strong></td>
+      <td class="nums">6.6M ק"ג<br><small>110.9M מעורב</small></td>
+      <td class="ports"><small>Ashdod, Ben Gurion Airport, Rabin Crossing</small></td>
+      <td class="hs-cell"><small><code class="hs">04012000</code> <code class="hs">04015000</code> <code class="hs">04029900</code> <code class="hs">04032090</code> <code class="hs">04039090</code> <code class="hs">04051039</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/604168"
+          target="_blank">2023.2207</a><br><small>31-03-2023</small></td>
+      <td class="subject">Non authorised proteins used in infant formulae from France</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>France</strong></td>
+      <td class="nums">6.6M ק"ג<br><small>110.9M מעורב</small></td>
+      <td class="ports"><small>Ashdod, Ben Gurion Airport, Rabin Crossing</small></td>
+      <td class="hs-cell"><small><code class="hs">04012000</code> <code class="hs">04015000</code> <code class="hs">04029900</code> <code class="hs">04032090</code> <code class="hs">04039090</code> <code class="hs">04051039</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/822106"
+          target="_blank">2026.1018</a><br><small>06-02-2026</small></td>
+      <td class="subject">Cereulide in infant formula from the Netherlands</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Netherlands</strong></td>
+      <td class="nums">5.3M ק"ג<br><small>113.7M מעורב</small></td>
+      <td class="ports"><small>Center, Ashdod, Ben Gurion Airport</small></td>
+      <td class="hs-cell"><small><code class="hs">04021020</code> <code class="hs">04022190</code> <code class="hs">04029900</code> <code class="hs">04039090</code> <code class="hs">04041090</code> <code class="hs">04051099</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/818328"
+          target="_blank">2026.0542</a><br><small>22-01-2026</small></td>
+      <td class="subject">Cereulide toxin in infant formula from Netherland</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Belgium</strong></td>
+      <td class="nums">3.9M ק"ג<br><small>51.0M מעורב</small></td>
+      <td class="ports"><small>Ashdod, Ben Gurion Airport, Rabin Crossing</small></td>
+      <td class="hs-cell"><small><code class="hs">04015000</code> <code class="hs">04021020</code> <code class="hs">04022120</code> <code class="hs">04022190</code> <code class="hs">04051039</code> <code class="hs">04051099</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/847622"
+          target="_blank">2026.4718</a><br><small>28-05-2026</small></td>
+      <td class="subject">Failure to sterilise infant formula</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>France</strong></td>
+      <td class="nums">3.7M ק"ג<br><small>63.4M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Haifa, Allenby</small></td>
+      <td class="hs-cell"><small><code class="hs">04012000</code> <code class="hs">04015000</code> <code class="hs">04029900</code> <code class="hs">04032090</code> <code class="hs">04039090</code> <code class="hs">04051039</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/816985"
+          target="_blank">2026.0347</a><br><small>16-01-2026</small></td>
+      <td class="subject">recall of infant formulae produced in Switzerland, possibly contaminated with cereulide</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Denmark</strong></td>
+      <td class="nums">2.1M ק"ג<br><small>28.7M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Haifa, Ashdod</small></td>
+      <td class="hs-cell"><small><code class="hs">04051099</code> <code class="hs">04061099</code> <code class="hs">04063099</code> <code class="hs">04064090</code> <code class="hs">04069099</code> <code class="hs">19019021</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/836861"
+          target="_blank">2026.3092</a><br><small>13-04-2026</small></td>
+      <td class="subject">Cereulide in infant formula from Ireland</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Ireland</strong></td>
+      <td class="nums">1.2M ק"ג<br><small>47.6M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Haifa, Ashdod</small></td>
+      <td class="hs-cell"><small><code class="hs">04051039</code> <code class="hs">04069099</code> <code class="hs">19011000</code> <code class="hs">19041000</code> <code class="hs">19053100</code> <code class="hs">19053200</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/824450"
+          target="_blank">2026.1353</a><br><small>18-02-2026</small></td>
+      <td class="subject">Infant formula products may contain cereulide, a toxin produced by Bacillus cereus</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Ireland</strong></td>
+      <td class="nums">1.2M ק"ג<br><small>47.6M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Haifa, Ashdod</small></td>
+      <td class="hs-cell"><small><code class="hs">04051039</code> <code class="hs">04069099</code> <code class="hs">19011000</code> <code class="hs">19041000</code> <code class="hs">19053100</code> <code class="hs">19053200</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/818714"
+          target="_blank">2026.0598</a><br><small>23-01-2026</small></td>
+      <td class="subject">Cereulide in infant formula, follow on formula and a FSMP, from Ireland</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Ireland</strong></td>
+      <td class="nums">1.1M ק"ג<br><small>40.8M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Haifa, Ashdod</small></td>
+      <td class="hs-cell"><small><code class="hs">04051039</code> <code class="hs">04069099</code> <code class="hs">19011000</code> <code class="hs">19041000</code> <code class="hs">19053100</code> <code class="hs">19053200</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/816985"
+          target="_blank">2026.0347</a><br><small>16-01-2026</small></td>
+      <td class="subject">recall of infant formulae produced in Switzerland, possibly contaminated with cereulide</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Switzerland</strong></td>
+      <td class="nums">1.0M ק"ג<br><small>13.7M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Haifa, Ashdod</small></td>
+      <td class="hs-cell"><small><code class="hs">04021090</code> <code class="hs">04029900</code> <code class="hs">04041090</code> <code class="hs">04061091</code> <code class="hs">04062041</code> <code class="hs">04069051</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/815076"
+          target="_blank">2026.0179</a><br><small>09-01-2026</small></td>
+      <td class="subject">recall of infant formulae produced in Switzerland, possibly contaminated with cereulide</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Switzerland</strong></td>
+      <td class="nums">1.0M ק"ג<br><small>13.7M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Haifa, Ashdod</small></td>
+      <td class="hs-cell"><small><code class="hs">04021090</code> <code class="hs">04029900</code> <code class="hs">04041090</code> <code class="hs">04061091</code> <code class="hs">04062041</code> <code class="hs">04069051</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/816985"
+          target="_blank">2026.0347</a><br><small>16-01-2026</small></td>
+      <td class="subject">recall of infant formulae produced in Switzerland, possibly contaminated with cereulide</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Austria</strong></td>
+      <td class="nums">907K ק"ג<br><small>25.0M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Rabin Crossing, Haifa</small></td>
+      <td class="hs-cell"><small><code class="hs">04063099</code> <code class="hs">19012000</code> <code class="hs">19019022</code> <code class="hs">19041000</code> <code class="hs">19049000</code> <code class="hs">19053100</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/821686"
+          target="_blank">2026.1017</a><br><small>06-02-2026</small></td>
+      <td class="subject">Cereulide in infant formula, follow on formula and FSMP, from Ireland</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Portugal</strong></td>
+      <td class="nums">503K ק"ג<br><small>3.4M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Haifa, Ashdod</small></td>
+      <td class="hs-cell"><small><code class="hs">04041090</code> <code class="hs">19019090</code> <code class="hs">19042000</code> <code class="hs">19053100</code> <code class="hs">19059091</code> <code class="hs">19059099</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/816985"
+          target="_blank">2026.0347</a><br><small>16-01-2026</small></td>
+      <td class="subject">recall of infant formulae produced in Switzerland, possibly contaminated with cereulide</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Finland</strong></td>
+      <td class="nums">118K ק"ג<br><small>3.1M EUR</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Ashdod</small></td>
+      <td class="hs-cell"><small><code class="hs">04051099</code> <code class="hs">04061099</code> <code class="hs">04063099</code> <code class="hs">04069099</code> <code class="hs">19019022</code> <code class="hs">19019029</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/821744"
+          target="_blank">2026.1008</a><br><small>06-02-2026</small></td>
+      <td class="subject">Cereulide in base powder ingredient used to manufacture infant formula, follow on formula and FSMP from Ireland</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Ireland</strong></td>
+      <td class="nums">105K ק"ג<br><small>6.9M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Haifa, Ashdod</small></td>
+      <td class="hs-cell"><small><code class="hs">21012000</code> <code class="hs">21069060</code> <code class="hs">21069099</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/825707"
+          target="_blank">2026.1513</a><br><small>24-02-2026</small></td>
+      <td class="subject">Detection of cereulide in infant formula from Estonia</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Estonia</strong></td>
+      <td class="nums">49K ק"ג<br><small>1.6M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Haifa, Ashdod</small></td>
+      <td class="hs-cell"><small><code class="hs">19011000</code> <code class="hs">21021000</code> <code class="hs">21022000</code> <code class="hs">21069099</code></small></td>
+    </tr>
+    <tr style="background:#fef5ec">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/816985"
+          target="_blank">2026.0347</a><br><small>16-01-2026</small></td>
+      <td class="subject">recall of infant formulae produced in Switzerland, possibly contaminated with cereulide</td>
+      <td><span class="badge" style="background:#e67e22">potentially serious</span></td>
+      <td class="country"><strong>Estonia</strong></td>
+      <td class="nums">49K ק"ג<br><small>1.6M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Haifa, Ashdod</small></td>
+      <td class="hs-cell"><small><code class="hs">19011000</code> <code class="hs">21021000</code> <code class="hs">21022000</code> <code class="hs">21069099</code></small></td>
+    </tr>
+    <tr style="background:#fff">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/802245"
+          target="_blank">2025.8678</a><br><small>17-11-2025</small></td>
+      <td class="subject">Inquiry Regarding Infant Formula and Follow-on Formula Containing Colostrum, from Poland</td>
+      <td><span class="badge" style="background:#888">potential risk</span></td>
+      <td class="country"><strong>Poland</strong></td>
+      <td class="nums">37.7M ק"ג<br><small>219.4M מעורב</small></td>
+      <td class="ports"><small>Center, Ashdod, Ben Gurion Airport</small></td>
+      <td class="hs-cell"><small><code class="hs">04015000</code> <code class="hs">04021020</code> <code class="hs">04022190</code> <code class="hs">04039090</code> <code class="hs">04041090</code> <code class="hs">04051039</code></small></td>
+    </tr>
+    <tr style="background:#fff">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/682493"
+          target="_blank">2024.3518</a><br><small>02-05-2024</small></td>
+      <td class="subject">Tropane alkaloids in infant formula in jars from Germany, produced in Spain</td>
+      <td><span class="badge" style="background:#888">potential risk</span></td>
+      <td class="country"><strong>Germany</strong></td>
+      <td class="nums">11.8M ק"ג<br><small>73.2M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Center, Haifa</small></td>
+      <td class="hs-cell"><small><code class="hs">16043100</code> <code class="hs">16043200</code> <code class="hs">19011000</code> <code class="hs">19012000</code> <code class="hs">19019021</code> <code class="hs">19019022</code></small></td>
+    </tr>
+    <tr style="background:#eafaf1">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/638691"
+          target="_blank">2023.7351</a><br><small>27-10-2023</small></td>
+      <td class="subject">Infant formula does not comply with legal requirements</td>
+      <td><span class="badge" style="background:#27ae60">not serious</span></td>
+      <td class="country"><strong>France</strong></td>
+      <td class="nums">6.6M ק"ג<br><small>110.9M מעורב</small></td>
+      <td class="ports"><small>Ashdod, Ben Gurion Airport, Rabin Crossing</small></td>
+      <td class="hs-cell"><small><code class="hs">04012000</code> <code class="hs">04015000</code> <code class="hs">04029900</code> <code class="hs">04032090</code> <code class="hs">04039090</code> <code class="hs">04051039</code></small></td>
+    </tr>
+    <tr style="background:#eafaf1">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/543969"
+          target="_blank">2022.2219</a><br><small>14-04-2022</small></td>
+      <td class="subject">3-MCPD esters in infant formula from France</td>
+      <td><span class="badge" style="background:#27ae60">not serious</span></td>
+      <td class="country"><strong>France</strong></td>
+      <td class="nums">6.6M ק"ג<br><small>110.9M מעורב</small></td>
+      <td class="ports"><small>Ashdod, Ben Gurion Airport, Rabin Crossing</small></td>
+      <td class="hs-cell"><small><code class="hs">04012000</code> <code class="hs">04015000</code> <code class="hs">04029900</code> <code class="hs">04032090</code> <code class="hs">04039090</code> <code class="hs">04051039</code></small></td>
+    </tr>
+    <tr style="background:#fff">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/536412"
+          target="_blank">2022.1436</a><br><small>11-03-2022</small></td>
+      <td class="subject">unauthorised placing on the market and insufficient labelling of organic hydrolyzed rice protein infant formula available for online sale in Ireland</td>
+      <td><span class="badge" style="background:#888">undecided</span></td>
+      <td class="country"><strong>France</strong></td>
+      <td class="nums">6.6M ק"ג<br><small>110.9M מעורב</small></td>
+      <td class="ports"><small>Ashdod, Ben Gurion Airport, Rabin Crossing</small></td>
+      <td class="hs-cell"><small><code class="hs">04012000</code> <code class="hs">04015000</code> <code class="hs">04029900</code> <code class="hs">04032090</code> <code class="hs">04039090</code> <code class="hs">04051039</code></small></td>
+    </tr>
+    <tr style="background:#f5f5f5">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/483387"
+          target="_blank">2021.3170</a><br><small>17-06-2021</small></td>
+      <td class="subject">Foreign bodies in infant formula for special medical purposes from the Netherlands</td>
+      <td><span class="badge" style="background:#95a5a6">no risk</span></td>
+      <td class="country"><strong>Netherlands</strong></td>
+      <td class="nums">5.3M ק"ג<br><small>113.7M מעורב</small></td>
+      <td class="ports"><small>Center, Ashdod, Ben Gurion Airport</small></td>
+      <td class="hs-cell"><small><code class="hs">04021020</code> <code class="hs">04022190</code> <code class="hs">04029900</code> <code class="hs">04039090</code> <code class="hs">04041090</code> <code class="hs">04051099</code></small></td>
+    </tr>
+    <tr style="background:#f5f5f5">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/789061"
+          target="_blank">2025.7416</a><br><small>20-11-2025</small></td>
+      <td class="subject">Presence of follow-on milk (lait 2ème age)  in boxes packaged and labelled as infant formula (lait 1er age)</td>
+      <td><span class="badge" style="background:#95a5a6">no risk</span></td>
+      <td class="country"><strong>Belgium</strong></td>
+      <td class="nums">3.0M ק"ג<br><small>38.9M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Haifa, Allenby</small></td>
+      <td class="hs-cell"><small><code class="hs">04015000</code> <code class="hs">04021020</code> <code class="hs">04022120</code> <code class="hs">04022190</code> <code class="hs">04051039</code> <code class="hs">04051099</code></small></td>
+    </tr>
+    <tr style="background:#fff">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/477380"
+          target="_blank">2021.2327</a><br><small>10-05-2021</small></td>
+      <td class="subject">Possible presence of plastic fragments in infant formula from the United Kingdom</td>
+      <td><span class="badge" style="background:#888">undecided</span></td>
+      <td class="country"><strong>United Kingdom</strong></td>
+      <td class="nums">2.8M ק"ג<br><small>44.0M מעורב</small></td>
+      <td class="ports"><small>Ashdod, Ben Gurion Airport, Rabin Crossing</small></td>
+      <td class="hs-cell"><small><code class="hs">04021090</code> <code class="hs">04051039</code> <code class="hs">04059020</code> <code class="hs">04061020</code> <code class="hs">04063099</code> <code class="hs">04064090</code></small></td>
+    </tr>
+    <tr style="background:#fff">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/801683"
+          target="_blank">2025.8633</a><br><small>06-11-2025</small></td>
+      <td class="subject">Non-presentation at border control of three consignments of infant formula currently unloaded in the Netherlands</td>
+      <td><span class="badge" style="background:#888">potential risk</span></td>
+      <td class="country"><strong>United Kingdom</strong></td>
+      <td class="nums">2.2M ק"ג<br><small>29.7M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Haifa, Ashdod</small></td>
+      <td class="hs-cell"><small><code class="hs">04021090</code> <code class="hs">04051039</code> <code class="hs">04059020</code> <code class="hs">04061020</code> <code class="hs">04063099</code> <code class="hs">04064090</code></small></td>
+    </tr>
+    <tr style="background:#eafaf1">
+      <td class="ref"><a href="https://webgate.ec.europa.eu/rasff-window/screen/notification/526623"
+          target="_blank">2022.0347</a><br><small>19-01-2022</small></td>
+      <td class="subject">improper production (product intended for children of two years old sold as for newborn babies up to 6 months) of infant formula from Sweden</td>
+      <td><span class="badge" style="background:#27ae60">not serious</span></td>
+      <td class="country"><strong>Sweden</strong></td>
+      <td class="nums">86K ק"ג<br><small>1.2M מעורב</small></td>
+      <td class="ports"><small>Ben Gurion Airport, Haifa, Ashdod</small></td>
+      <td class="hs-cell"><small><code class="hs">19019090</code> <code class="hs">19041000</code> <code class="hs">19051000</code> <code class="hs">19052090</code> <code class="hs">19053100</code> <code class="hs">19053200</code></small></td>
+    </tr></tbody></table>
+  </div>
+
+  <div class="footer">
+    נתוני RASFF: <a href="https://webgate.ec.europa.eu/rasff-window/screen/search" target="_blank">RASFF Window</a> ·
+    נתוני מכס: <a href="https://data.gov.il/he/datasets/taxes-authority/customs_import_statistics_data" target="_blank">data.gov.il</a>
+  </div>
+</div>
+</body>
+</html>
