@@ -1,7 +1,7 @@
-"""
-מייצר דשבורד HTML של הצלבת RASFF × מכס ישראל ופותח בדפדפן.
-הרצה: python report.py [מחרוזת-חיפוש]
-ברירת מחדל: infant formula
+﻿"""
+׳׳™׳™׳¦׳¨ ׳“׳©׳‘׳•׳¨׳“ HTML ׳©׳ ׳”׳¦׳׳‘׳× RASFF ֳ— ׳׳›׳¡ ׳™׳©׳¨׳׳ ׳•׳₪׳•׳×׳— ׳‘׳“׳₪׳“׳₪׳.
+׳”׳¨׳¦׳”: python report.py [׳׳—׳¨׳•׳–׳×-׳—׳™׳₪׳•׳©]
+׳‘׳¨׳™׳¨׳× ׳׳—׳“׳: infant formula
 """
 
 import json, sys, os, webbrowser, textwrap
@@ -22,7 +22,7 @@ RASFF_H = {
     "Origin":       "https://webgate.ec.europa.eu",
 }
 
-# ── שליפת נתונים ─────────────────────────────────────────────────────────────
+# ג”€ג”€ ׳©׳׳™׳₪׳× ׳ ׳×׳•׳ ׳™׳ ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€
 
 def fetch_rasff(query, pages=2):
     alerts = []
@@ -43,7 +43,7 @@ def fetch_rasff(query, pages=2):
     return alerts
 
 def fetch_customs_for_iso(iso, hs2_list):
-    """שולף יבוא לפי מדינת מקור + פרקי HS."""
+    """׳©׳•׳׳£ ׳™׳‘׳•׳ ׳׳₪׳™ ׳׳“׳™׳ ׳× ׳׳§׳•׳¨ + ׳₪׳¨׳§׳™ HS."""
     records = []
     for hs2 in hs2_list:
         params = {
@@ -56,7 +56,7 @@ def fetch_customs_for_iso(iso, hs2_list):
         records.extend(r.json().get("result", {}).get("records", []))
     return records
 
-# HS chapters לפי קטגוריית RASFF
+# HS chapters ׳׳₪׳™ ׳§׳˜׳’׳•׳¨׳™׳™׳× RASFF
 CAT_HS = {
     "milk and milk products":                               ["04", "19"],
     "dietetic foods, food supplements and fortified foods": ["04", "19", "21"],
@@ -75,9 +75,9 @@ CAT_HS = {
     "other food product / mixed":                           ["21"],
 }
 
-# ── הצלבה ────────────────────────────────────────────────────────────────────
+# ג”€ג”€ ׳”׳¦׳׳‘׳” ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€
 
-print(f"[1/3] שולף RASFF: '{QUERY}'...")
+print(f"[1/3] ׳©׳•׳׳£ RASFF: '{QUERY}'...")
 alerts = fetch_rasff(QUERY)
 total_rasff = alerts[0] and None  # sentinel
 with httpx.Client(verify=False, timeout=10) as c:
@@ -90,11 +90,11 @@ with httpx.Client(verify=False, timeout=10) as c:
     r = c.post(RASFF_URL, json=body, headers=RASFF_H)
     total_rasff = r.json().get("totalElements", len(alerts))
 
-print(f"    {len(alerts)} התראות נשלפו (סה\"כ ב-RASFF: {total_rasff})")
+print(f"    {len(alerts)} ׳”׳×׳¨׳׳•׳× ׳ ׳©׳׳₪׳• (׳¡׳”\"׳› ׳‘-RASFF: {total_rasff})")
 
-print("[2/3] מצליב מול מכס...")
+print("[2/3] ׳׳¦׳׳™׳‘ ׳׳•׳ ׳׳›׳¡...")
 rows = []
-seen_customs = {}   # iso → records cache
+seen_customs = {}   # iso ג†’ records cache
 
 for a in alerts:
     cat_obj  = a.get("productCategory") or {}
@@ -140,7 +140,7 @@ for a in alerts:
             "origin_name":  name,
             "total_kg":     total_kg,
             "total_val":    total_val,
-            "currency":     curs[0] if len(curs) == 1 else "מעורב",
+            "currency":     curs[0] if len(curs) == 1 else "׳׳¢׳•׳¨׳‘",
             "ports":        ports,
             "hs8_codes":    hs8s,
             "records_n":    len(customs),
@@ -150,9 +150,9 @@ rows.sort(key=lambda r: (
     {"serious": 0, "potentially serious": 1}.get(r["risk"], 2),
     -r["total_kg"]
 ))
-print(f"    {len(rows)} שורות התאמה")
+print(f"    {len(rows)} ׳©׳•׳¨׳•׳× ׳”׳×׳׳׳”")
 
-# ── HTML ──────────────────────────────────────────────────────────────────────
+# ג”€ג”€ HTML ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€
 
 RISK_COLOR = {
     "serious":            "#c0392b",
@@ -169,16 +169,16 @@ RISK_BG = {
 
 def risk_badge(risk):
     color = RISK_COLOR.get(risk, "#888")
-    label = risk or "לא ידוע"
+    label = risk or "׳׳ ׳™׳“׳•׳¢"
     return f'<span class="badge" style="background:{color}">{label}</span>'
 
 def hs_chips(codes):
     return " ".join(f'<code class="hs">{c}</code>' for c in codes[:6])
 
 def fmt_kg(v):
-    if v >= 1_000_000: return f"{v/1_000_000:.1f}M ק\"ג"
-    if v >= 1_000:     return f"{v/1_000:.0f}K ק\"ג"
-    return f"{v:.0f} ק\"ג"
+    if v >= 1_000_000: return f"{v/1_000_000:.1f}M ׳§\"׳’"
+    if v >= 1_000:     return f"{v/1_000:.0f}K ׳§\"׳’"
+    return f"{v:.0f} ׳§\"׳’"
 
 def fmt_val(v, cur):
     if v >= 1_000_000: return f"{v/1_000_000:.1f}M {cur}"
@@ -218,7 +218,7 @@ html = f"""<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RASFF × מכס ישראל — {QUERY}</title>
+<title>RASFF ֳ— ׳׳›׳¡ ׳™׳©׳¨׳׳ ג€” {QUERY}</title>
 <style>
   * {{ box-sizing: border-box; margin: 0; padding: 0; }}
   body {{ font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; color: #222; font-size: 14px; }}
@@ -268,10 +268,10 @@ html = f"""<!DOCTYPE html>
 <body>
 <header>
   <div>
-    <div style="font-size:.75rem;opacity:.6;margin-bottom:4px">RASFF × מכס ישראל</div>
-    <h1>🔍 חיפוש: <span class="query">{QUERY}</span></h1>
+    <div style="font-size:.75rem;opacity:.6;margin-bottom:4px">RASFF ֳ— ׳׳›׳¡ ׳™׳©׳¨׳׳</div>
+    <h1>נ” ׳—׳™׳₪׳•׳©: <span class="query">{QUERY}</span></h1>
   </div>
-  <div class="meta">עודכן: {now}<br>מקורות: RASFF + data.gov.il</div>
+  <div class="meta">׳¢׳•׳“׳›׳: {now}<br>׳׳§׳•׳¨׳•׳×: RASFF + data.gov.il</div>
 </header>
 
 <div class="container">
@@ -279,47 +279,48 @@ html = f"""<!DOCTYPE html>
   <div class="stats">
     <div class="stat-card">
       <div class="num">{total_rasff}</div>
-      <div class="lbl">התראות RASFF על "{QUERY}"</div>
+      <div class="lbl">׳”׳×׳¨׳׳•׳× RASFF ׳¢׳ "{QUERY}"</div>
     </div>
     <div class="stat-card">
       <div class="num">{len(alerts)}</div>
-      <div class="lbl">נשלפו לניתוח</div>
+      <div class="lbl">׳ ׳©׳׳₪׳• ׳׳ ׳™׳×׳•׳—</div>
     </div>
     <div class="stat-card">
       <div class="num">{len(rows)}</div>
-      <div class="lbl">הצלבות עם יבוא ישראל</div>
+      <div class="lbl">׳”׳¦׳׳‘׳•׳× ׳¢׳ ׳™׳‘׳•׳ ׳™׳©׳¨׳׳</div>
     </div>
     <div class="stat-card">
       <div class="num" style="color:#c0392b">{summary_risk.get('serious',0)}</div>
-      <div class="lbl">חומרה: serious</div>
+      <div class="lbl">׳—׳•׳׳¨׳”: serious</div>
     </div>
   </div>
 
   <div class="summary-pills">
-    <span style="font-size:.82rem;color:#555;margin-left:4px">חלוקה לפי חומרה:</span>
+    <span style="font-size:.82rem;color:#555;margin-left:4px">׳—׳׳•׳§׳” ׳׳₪׳™ ׳—׳•׳׳¨׳”:</span>
     {summary_pills}
   </div>
 
   <div class="table-wrap">
-    {'<table><thead><tr><th>מזהה RASFF</th><th>תיאור</th><th>חומרה</th><th>מדינת מקור</th><th>יבוא לישראל</th><th>נמלים</th><th>קודי HS</th></tr></thead><tbody>' + table_rows + '</tbody></table>' if rows else '<div class="no-data">לא נמצאו הצלבות</div>'}
+    {'<table><thead><tr><th>׳׳–׳”׳” RASFF</th><th>׳×׳™׳׳•׳¨</th><th>׳—׳•׳׳¨׳”</th><th>׳׳“׳™׳ ׳× ׳׳§׳•׳¨</th><th>׳™׳‘׳•׳ ׳׳™׳©׳¨׳׳</th><th>׳ ׳׳׳™׳</th><th>׳§׳•׳“׳™ HS</th></tr></thead><tbody>' + table_rows + '</tbody></table>' if rows else '<div class="no-data">׳׳ ׳ ׳׳¦׳׳• ׳”׳¦׳׳‘׳•׳×</div>'}
   </div>
 
   <div class="footer">
-    נתוני RASFF: <a href="https://webgate.ec.europa.eu/rasff-window/screen/search" target="_blank">RASFF Window</a> ·
-    נתוני מכס: <a href="https://data.gov.il/he/datasets/taxes-authority/customs_import_statistics_data" target="_blank">data.gov.il</a>
+    ׳ ׳×׳•׳ ׳™ RASFF: <a href="https://webgate.ec.europa.eu/rasff-window/screen/search" target="_blank">RASFF Window</a> ֲ·
+    ׳ ׳×׳•׳ ׳™ ׳׳›׳¡: <a href="https://data.gov.il/he/datasets/taxes-authority/customs_import_statistics_data" target="_blank">data.gov.il</a>
   </div>
 </div>
 </body>
 </html>"""
 
-# ── שמירה ופתיחה ─────────────────────────────────────────────────────────────
+# ג”€ג”€ ׳©׳׳™׳¨׳” ׳•׳₪׳×׳™׳—׳” ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€
 
-print("[3/3] מייצר HTML ופותח בדפדפן...")
-out = os.path.abspath("web/dashboard.html")
-os.makedirs("web", exist_ok=True)
+print("[3/3] ׳׳™׳™׳¦׳¨ HTML ׳•׳₪׳•׳×׳— ׳‘׳“׳₪׳“׳₪׳...")
+out = os.path.abspath("docs/dashboard.html")
+os.makedirs("docs", exist_ok=True)
 with open(out, "w", encoding="utf-8") as f:
     f.write(html)
 
-if sys.stdout.isatty():   # פותח דפדפן רק כשרץ אינטראקטיבי, לא ב-CI
+if sys.stdout.isatty():   # ׳₪׳•׳×׳— ׳“׳₪׳“׳₪׳ ׳¨׳§ ׳›׳©׳¨׳¥ ׳׳™׳ ׳˜׳¨׳׳§׳˜׳™׳‘׳™, ׳׳ ׳‘-CI
     webbrowser.open(f"file:///{out.replace(os.sep, '/')}")
-print(f"    נשמר ב: {out}")
+print(f"    ׳ ׳©׳׳¨ ׳‘: {out}")
+
